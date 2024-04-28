@@ -24,3 +24,6 @@ jobs:
       - name: Publishing
         run: |
           ./gradlew publish
+        env:
+          GITHUB_USER: viktor44
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
