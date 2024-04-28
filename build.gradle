@@ -45,10 +45,10 @@ publishing {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/viktor44/rxswing3")
-//            credentials {
-//                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-//                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
-//            }
+            credentials {
+		        username = System.getenv("GITHUB_ACTOR")
+		        password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
     publications {
