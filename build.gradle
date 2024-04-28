@@ -25,11 +25,6 @@ java {
 	targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-//task sourceJar(type: Jar) {
-//	classifier 'sources'
-//	from sourceSets.main.allJava
-//}
-
 task sourcesJar(type: Jar, dependsOn: classes) {
 	classifier = 'sources'
 	from sourceSets.main.allSource
@@ -45,11 +40,21 @@ artifacts {
 	archives javadocJar
 }
 
-//publishing {
+publishing {
 //    publications {
 //        gpr(MavenPublication) {
 //            from components.java
 //            artifact tasks.sourceJar
 //        }
 //    }
-//}
+
+	maven {
+		name = "Github"
+		url = "https://maven.pkg.github.com/viktor44/rxswing3"
+		credentials {
+			username = System.getenv("MAVEN_USERNAME")
+			password = System.getenv("MAVEN_PASSWORD")
+		}
+	}
+	
+}
