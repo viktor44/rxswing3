@@ -17,10 +17,9 @@ jobs:
           distribution: 'temurin'
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v3
-        run: |
-          chmod 755 gradlew 
       - name: Build
         run: |
+          chmod 755 gradlew 
           ./gradlew build
       - name: Publishing
         run: |
