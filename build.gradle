@@ -48,13 +48,19 @@ publishing {
 //        }
 //    }
 
-	maven {
-		name = "Github"
-		url = "https://maven.pkg.github.com/viktor44/rxswing3"
-		credentials {
-			username = System.getenv("MAVEN_USERNAME")
-			password = System.getenv("MAVEN_PASSWORD")
-		}
-	}
-	
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/viktor44/rxswing3")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }	
 }

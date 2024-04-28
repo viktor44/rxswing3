@@ -38,6 +38,7 @@ Thumbs.db
 
 # Gradle Files #
 ################
+!gradle-wrapper.jar
 .gradle
 .gradletasknamecache
 .m2
