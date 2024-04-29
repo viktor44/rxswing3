@@ -33,6 +33,7 @@ artifacts {
 	archives javadocJar
 }
 
+/*
 publishing {
     repositories {
         maven {
@@ -44,6 +45,7 @@ publishing {
             }
        }
     }
+    
     publications {
         mavenJava(MavenPublication) {
             from components.java
@@ -69,7 +71,8 @@ publishing {
                     // set the scope to 'compile'
                     dependency.scope*.value = 'compile'
                 }
-            }           
+            }
         }
     }  
 }
+*/
