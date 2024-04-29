@@ -16,7 +16,7 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
       - name: Setup Gradle
-        uses: uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v3
       - name: Publishing
         run: |
           chmod 755 gradlew 
